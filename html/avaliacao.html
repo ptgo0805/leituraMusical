@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leitura Musical</title>
+  <script src="https://cdn.jsdelivr.net/npm/vexflow@4.0.3/build/cjs/vexflow.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+              integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+              crossorigin="anonymous">
+  </script>
+  <script src=
+    "https://smtpjs.com/v3/smtp.js">
+  </script>
+
+  <link rel="stylesheet" href="../css/sheetmusic.css">
+</head>
+<body>
+  <div class="div-main">
+      <div class="cabecalho">
+        <h2>Leitura Musical</h2>
+        <br>
+        <form method="post">
+            <input id="enviareemail" type="button" value="Enviar Avalia&ccedil;&atilde;o" onclick="sendEmail()" />
+        </form>
+         <ul>
+          <!--li><h3><a href="mailto:ptgo0805@gmail.com?subject=avaliacao&body=resultado">Enviar Avalia&ccedil;&atilde;o</a></h3></li -->
+          <li><a href="./baseTeorica.html">Base Teorica</a></li>
+          <li><a href="./exercicios.html">Exercitar</a></li>
+          <li><a href="../index.html">Inicio</a></li>
+        </ul>
+      </div>
+      <div class="divpart" id="div-part"></div>
+      <!--canvas class="divpart" id="div-part" width="200" height="100"></canvas-->
+      <div class="respostas" id="div-respostas">
+        <button class="bt-nota" onclick="btNotaClick('0')">DO</button>
+        <button class="bt-nota" onclick="btNotaClick('1')">RE</button>
+        <button class="bt-nota" onclick="btNotaClick('2')">MI</button>
+        <button class="bt-nota" onclick="btNotaClick('3')">FA</button>
+        <button class="bt-nota" onclick="btNotaClick('4')">SOL</button>
+        <button class="bt-nota" onclick="btNotaClick('5')">LA</button>
+        <button class="bt-nota" onclick="btNotaClick('6')">SI</button>
+      </div>
+  </div>
+  <footer>
+
+  </footer>
+  <script src="../js/avaliacao.js"></script>
+</body>
+</html>

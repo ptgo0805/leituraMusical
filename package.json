@@ -1,0 +1,19 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-js-package": "^1.2.1",
+    "createjs-suite": "^0.1.0",
+    "easeljs": "^1.0.2",
+    "httpserver": "^0.0.9",
+    "vexflow": "^4.0.3"
+  }
+}
