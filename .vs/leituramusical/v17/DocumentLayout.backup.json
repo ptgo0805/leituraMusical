@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "D:\\leituramusical\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2022-12-14T22:38:20.589Z",
               "EditorCaption": ""
@@ -55,7 +55,8 @@
               "RelativeToolTip": "css\\leituramusical.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2022-12-14T22:47:18.005Z"
+              "WhenOpened": "2022-12-14T22:47:18.005Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -67,7 +68,8 @@
               "RelativeToolTip": "css\\sheetmusic.css",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAACkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2022-12-14T22:47:47.024Z"
+              "WhenOpened": "2022-12-14T22:47:47.024Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -79,7 +81,8 @@
               "RelativeToolTip": "js\\avaliacao.js",
               "ViewState": "AgIAADwAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2022-12-14T22:44:56.946Z"
+              "WhenOpened": "2022-12-14T22:44:56.946Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -91,7 +94,8 @@
               "RelativeToolTip": "html\\avaliacao.html",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2022-12-14T22:44:43.882Z"
+              "WhenOpened": "2022-12-14T22:44:43.882Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
