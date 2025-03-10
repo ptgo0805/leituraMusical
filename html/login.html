@@ -1,28 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leitura de Partitura - Login</title>
+	
+	<!-- 
+	@media (max-width: 768px) {
+		.main-login {
+			flex-direction: column;
+		}
+		.welcome-section, .login-form {
+			width: 100%;
+		}
+	}
+	-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-login">
-        <div class="card-left"><h1>Faça o Login e leia partitura muito rapido</h1>
-        <!-- img class="left-login-image" src="Recording.gif" --></div>
-        <div class="card-login">
+        <!-- Seção de Boas-Vindas -->
+        <div class="welcome-section" aria-label="Boas-vindas">
+            <h1>Faça o Login e leia partitura muito rápido</h1>
+            <!-- Imagem comentada para futura implementação -->
+            <!-- <img class="welcome-image" src="Recording.gif" alt="Animação de boas-vindas"> -->
+        </div>
+
+        <!-- Formulário de Login -->
+        <div class="login-form" role="form" aria-label="Formulário de login">
             <h1>LOGIN</h1>
-            <div class="textfield">
-                <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" placeholder="Usuario">
-            </div>
-            <div class="textfield">
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Senha">
-            </div>
-            <button class="btn-login">Login</button>
-        </div>  
+            <form method="POST" action="/login" aria-label="Formulário de login">
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required aria-required="true">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required aria-required="true">
+                </div>
+                <button class="btn-login" type="submit" aria-label="Entrar">Login</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

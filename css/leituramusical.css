@@ -1,48 +1,80 @@
-
-body {
-    margin: 0%;
-    width: 100vw;
-    height: 100 vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #D9C864;
+/* Variáveis de cores para facilitar a manutenção */
+:root {
+    --cor-primaria: #D9C864;
+    --cor-secundaria: #6F64D9;
+    --cor-terciaria: #3B328C;
 }
-/**
-main {
-    margin: 0%;
+
+/* Reset básico para garantir consistência entre navegadores */
+body {
+    margin: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content:center;
-    align-items:center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--cor-primaria);
+    font-family: Arial, sans-serif; /* Adicionado para melhorar a tipografia */
 }
+
+/* Estilos para o cabeçalho */
 .header {
-    margin: 0px;
+    margin: 0;
     border-radius: 8px;
-    background: #6F64D9;
-    color: #D9C864;
-    width: 100vw;
-    height: 30vh;
+    background: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima para melhor leitura */
+    height: auto; /* Altura automática para melhor responsividade */
+    min-height: 30vh; /* Altura mínima */
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
-    padding: 4px;
-    outline: none;
+    align-items: flex-start;
+    padding: 16px; /* Aumentei o padding para melhor espaçamento */
     box-sizing: border-box;
 }
-h2 { margin: 0%;}
 
-.footer    border-radius: 8px;
-    background: #3B328C;
-    width: 100vw;
-    height: 20vh;
+/* Estilos para o título h2 */
+h2 {
+    margin: 0;
+    font-size: 1.5rem; /* Tamanho de fonte responsivo */
+}
+
+/* Estilos para o rodapé */
+.footer {
+    border-radius: 8px;
+    background: var(--cor-terciaria);
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima */
+    height: auto; /* Altura automática para melhor responsividade */
+    min-height: 20vh; /* Altura mínima */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    outline: none; 
-    padding: 4px;
+    padding: 16px; /* Aumentei o padding para melhor espaçamento */
     box-sizing: border-box;
-} 
-**/
+    margin-top: auto; /* Garante que o rodapé fique no final da página */
+}
+
+/* Estilos para links no rodapé (se houver) */
+.footer a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Efeito hover para links */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .header, .footer {
+        padding: 8px; /* Reduz o padding em telas menores */
+    }
+
+    h2 {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+}

@@ -1,19 +1,45 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reprodução de Som com CreateJS</title>
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
     <script>
-      var soundID = "Thunder";
+        // Verifica se a biblioteca CreateJS está carregada
+        if (!createjs || !createjs.Sound) {
+            console.error("Biblioteca CreateJS não carregada corretamente.");
+        }
 
-      function loadSound () {
-        createjs.Sound.registerSound("assets/thunder.ogg", soundID);
-      }
+        const soundThunderID = "Thunder";
+        const soundFile = "assets/thunder.ogg";
 
-      function playSound () {
-        createjs.Sound.play(soundID);
-      }
+        function loadSound() {
+            createjs.Sound.registerSound(soundFile, soundThunderID);
+            console.log("Som carregado com sucesso.");
+        }
+
+        function playSound() {
+            try {
+                const instance = createjs.Sound.play(soundThunderID);
+                if (!instance) {
+                    throw new Error("Falha ao reproduzir o som.");
+                }
+                console.log("Som reproduzido com sucesso.");
+            } catch (error) {
+                console.error("Erro ao reproduzir o som:", error.message);
+                alert("Erro ao reproduzir o som. Verifique o console para mais detalhes.");
+            }
+        }
+
+        // Adiciona event listeners após o carregamento da página
+        document.addEventListener("DOMContentLoaded", () => {
+            loadSound();
+            document.querySelector(".playSound").addEventListener("click", playSound);
+        });
     </script>
-  </head>
-  <body onload="loadSound();">
-    <button onclick="playSound();" class="playSound">Play Sound</button>
-  </body>
+</head>
+<body>
+    <button class="playSound">Play Sound</button>
+</body>
 </html>

@@ -1,76 +1,87 @@
+const erros = 0;
+const acertos = 0;
+const notas = ['C4/w', 'D4/w', 'E4/w', 'F4/w', 'G4/w', 'A4/w', 'B4/w', 'C5/w', 'D5/w', 'E5/w', 'F5/w', 'G5/w', 'A5/w', 'B5/w'];
+let notaAtual = notaAleatoria();
+let notaAnterior = null;
 
-var erros = 0;
-var acertos = 0
-var notas = ['C4/w','D4/w','E4/w','F4/w','G4/w','A4/w','B4/w', 'C5/w','D5/w','E5/w','F5/w','G5/w','A5/w','B5/w'];
-var ntAtual = notaAleatoria();
-var ntAnterior = null;
+renderizaPartitura(notaAtual);
+(notaAtual > 6) ? notaAtual -= 7 : notaAtual;
 
-renderizaPartitura(ntAtual);
-(ntAtual > 6) ? ntAtual = ntAtual - 7: ntAtual;
+document.getElementById('h2acertos').style.display = 'none';
+document.getElementById('h2erros').style.display = 'none';
 
-$('h2acertos').hide();
-$('h2erros').hide();
+function renderizaPartitura(nota) {
+    const VF = Vex.Flow;
+    const divPartitura = document.getElementById('div-part');
+    divPartitura.innerHTML = ''; // Limpa o conteúdo anterior
 
-function renderizaPartitura(nt) {
-  const VF = Vex.Flow;
-  var vf = new VF.Factory({renderer: {elementId: 'div-part', height: 400}});
-  var score = vf.EasyScore();
-  var system = vf.System();
-  system.addStave({
-      voices: [score.voice(score.notes(notas[nt]))]
+    const vf = new VF.Factory({ renderer: { elementId: 'div-part', height: 400 } });
+    const score = vf.EasyScore();
+    const system = vf.System();
+
+    system.addStave({
+        voices: [score.voice(score.notes(notas[nota]))]
     }).addClef('treble').addTimeSignature('4/4');
-  vf.draw();
+
+    vf.draw();
 }
 
 function btNotaClick(nota) {
     limpaDiv();
-    //alert('Nota:' + nota + ' / Nota na pauta:' + ntAtual );
-    (ntAtual > 6) ? ntAtual = ntAtual - 7: ntAtual;
-    (ntAtual == nota) ? acertos++ : erros++;
-    document.getElementById('h2acertos').innerHTML = "Acertos: " + acertos;
-    document.getElementById('h2erros').innerHTML = "Erros: " + erros;
-    ntAtual = notaAleatoria();
-    renderizaPartitura(ntAtual);
+    (notaAtual > 6) ? notaAtual -= 7 : notaAtual;
+
+    if (notaAtual === nota) {
+        acertos++;
+    } else {
+        erros++;
+    }
+
+    document.getElementById('h2acertos').textContent = "Acertos: " + acertos;
+    document.getElementById('h2erros').textContent = "Erros: " + erros;
+    notaAtual = notaAleatoria();
+    renderizaPartitura(notaAtual);
 }
 
 function notaAleatoria() {
-  note = Math.floor(Math.random() * 14);
-  return note;
+    return Math.floor(Math.random() * 14);
 }
 
-function limpaDiv(){
-  // apaga o conteudo da  div que contem a partitura
-  document.getElementById('div-part').innerHTML = "";
+function limpaDiv() {
+    document.getElementById('div-part').innerHTML = "";
 }
 
 function desabilitaBotoes() {
-  document.getElementsByClassName('.bt-nota').disabled = true;
+    const botoes = document.querySelectorAll('.bt-nota');
+    botoes.forEach(botao => botao.disabled = true);
 }
+
 function habilitaBotoes() {
-  document.getElementsByClassName('.bt-nota').disabled = false;
+    const botoes = document.querySelectorAll('.bt-nota');
+    botoes.forEach(botao => botao.disabled = false);
 }
 
 function btIniciarClick() {
-  limpaDiv();
-  erros = 0;
-  acertos=0;
-  document.getElementById('h2erros').innerHTML = "Erros: " + erros;
-  document.getElementById('h2acertos').innerHTML = "Acertos: " + acertos;
-  ntAtual = notaAleatoria();
-  renderizaPartitura(ntAtual);
+    limpaDiv();
+    erros = 0;
+    acertos = 0;
+    document.getElementById('h2erros').textContent = "Erros: " + erros;
+    document.getElementById('h2acertos').textContent = "Acertos: " + acertos;
+    notaAtual = notaAleatoria();
+    renderizaPartitura(notaAtual);
 }
 
 function sendEmail() {
+    const emailBody = `Acertos: ${acertos}, Erros: ${erros}`;
+
     Email.send({
-    Host: "smtp.gmail.com",
-    Username: "ptgo0805@gmail.com",
-    Password: "Fdgj04fdgj04",
-    To: 'ptgo0805@gmail.com',
-    From: "ptgo0805@gmail.com",
-    Subject: "Avaliacao",
-    Body: "Well that was easy!!",
-    })
-    .then(function (message) {
-        alert("Avalia&ccedil;&atilde;o enviada com sucesso")
+        SecureToken: "SEU_TOKEN_AQUI", // Use um token seguro em vez de senha
+        To: 'ptgo0805@gmail.com',
+        From: "ptgo0805@gmail.com",
+        Subject: "Avaliacao",
+        Body: emailBody,
+    }).then(function (message) {
+        alert("Avaliação enviada com sucesso");
+    }).catch(function (error) {
+        alert("Erro ao enviar avaliação: " + error.message);
     });
 }

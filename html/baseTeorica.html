@@ -1,50 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR"> <!-- Adicionado o atributo lang para acessibilidade -->
 <head>
-    <title>Base Teórica</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
-                  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-                  crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="../css/leituramuaical.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta tag para responsividade -->
+    <title>Base Teórica - Leitura Musical</title>
+    <meta name="description" content="Aula de música na graduação mediada por aplicativo de celular. Base teórica sobre leitura musical.">
+    <meta name="keywords" content="música, leitura musical, pauta, clave de sol, escala natural">
+    <link rel="stylesheet" href="../css/leituramusical.css"> <!-- Corrigido o nome do arquivo CSS -->
 </head>
 <body>
-<header>
-	<h1>AULA DE MÚSICA NA GRADUAÇÃO MEDIADA POR APLICATIVO DE CELULAR.</h1>
-	<h2>LEITURA MUSICAL - Base Teórica</h2>
-</header>
-<main>
-<div>
-<p>Para decifrar a música escrita é necessário conhecer três elementos:</p>
+    <!-- Cabeçalho da página -->
+    <header class="header">
+        <h1>Aula de Música na Graduação Mediada por Aplicativo de Celular</h1>
+        <h2>Leitura Musical - Base Teórica</h2>
+    </header>
 
-<p>A Pauta, a Clave e a Escala Natural. A pauta ou pentagrama é um conjunto de 5 linhas que forma 4 espaços entre si,
-sobre a qual se escreve a música.</p>
-<p> A clave é uma figura escrita sobre a pauta e serve para dar nome às notas musicais.</p>
-<p>A <strong>Clave de sol</strong> é escrita no inicio da pauta. O local a partir do qual é feita sua escrita define a posição da nota SOL.</p>
+    <!-- Conteúdo principal -->
+    <main>
+        <section aria-labelledby="introducao"> <!-- Adicionado aria-labelledby para acessibilidade -->
+            <h2 id="introducao">Introdução</h2>
+            <p>Para decifrar a música escrita, é necessário conhecer três elementos fundamentais:</p>
+            <ul>
+                <li><strong>Pauta (ou Pentagrama):</strong> Conjunto de 5 linhas e 4 espaços onde a música é escrita.</li>
+                <li><strong>Clave:</strong> Símbolo que define a posição das notas na pauta.</li>
+                <li><strong>Escala Natural:</strong> Conjunto das 7 notas naturais: Dó, Ré, Mi, Fá, Sol, Lá e Si.</li>
+            </ul>
+        </section>
 
-<img src="../img/pauta-clave-de-sol.png" width="720px">
+        <section aria-labelledby="pauta-clave">
+            <h2 id="pauta-clave">Pauta e Clave de Sol</h2>
+            <p>A <strong>pauta</strong> é composta por 5 linhas e 4 espaços. A <strong>clave de sol</strong> é escrita no início da pauta e define a posição da nota Sol.</p>
+            <figure>
+                <img src="../img/pauta-clave-de-sol.png" alt="Pauta com Clave de Sol" style="max-width: 100%; height: auto;">
+                <figcaption>Figura 1: Pauta com Clave de Sol.</figcaption> <!-- Adicionado figcaption para acessibilidade -->
+            </figure>
+        </section>
 
+        <section aria-labelledby="escala-natural">
+            <h2 id="escala-natural">Escala Natural</h2>
+            <p>A escala natural é formada pelas 7 notas naturais: Dó, Ré, Mi, Fá, Sol, Lá e Si. Essas notas podem ser representadas na pauta.</p>
+            <figure>
+                <img src="../img/escaladiatonica.jpg" alt="Escala Diatônica Natural" style="max-width: 100%; height: auto;">
+                <figcaption>Figura 2: Escala Diatônica Natural.</figcaption>
+            </figure>
+        </section>
 
-<p>A escala natural é o conjunto das 7 notas naturais: DÓ, RÉ, MI, FÁ, SOL, LÁ e SI</P>
+        <section aria-labelledby="notas-linhas-espacos">
+            <h2 id="notas-linhas-espacos">Notas nas Linhas e Espaços</h2>
+            <p>Para facilitar a memorização, as notas na pauta podem ser divididas em duas categorias:</p>
+            <article>
+                <h3>Notas nas Linhas</h3>
+                <figure>
+                    <img src="../img/notasdaslinhas.jpg" alt="Notas nas Linhas da Pauta" style="max-width: 100%; height: auto;">
+                    <figcaption>Figura 3: Notas nas Linhas da Pauta.</figcaption>
+                </figure>
+            </article>
+            <article>
+                <h3>Notas nos Espaços</h3>
+                <figure>
+                    <img src="../img/notasdosespacos.jpg" alt="Notas nos Espaços da Pauta" style="max-width: 100%; height: auto;">
+                    <figcaption>Figura 4: Notas nos Espaços da Pauta.</figcaption>
+                </figure>
+            </article>
+        </section>
+    </main>
 
-<img src="../img/escaladiatonica.jpg" width="720px">
-
-<p>Para melhor memorizar o nome das notas e sua posição na pauta,
-se divide em duas sequências de de notas: as notas que estao nas linhas 
-e as que encontran-se nos espaços.</p>
-<h3>Notas das linhas</h3>
-<img src="../img/notasdaslinhas.jpg" width="720px">
-<h3>Notas dos Espaços</h3>
-<img src="../img/notasdosespacos.jpg" width="720px">
-</div>
-</main>
-<footer>
-<br><br>
-<ul>
-  <li><a href="./exercicios.html">Exercícios</a></li>
-  <li><a href="./avaliacao.html">Avaliação</a></li>
-  <li><a href="../index.html">Início</a></li>
-</ul>
-</footer>
+    <!-- Rodapé da página -->
+    <footer class="footer">
+        <nav aria-label="Navegação do rodapé"> <!-- Adicionado aria-label para acessibilidade -->
+            <ul>
+                <li><a href="./exercicios.html">Exercícios</a></li>
+                <li><a href="./avaliacao.html">Avaliação</a></li>
+                <li><a href="../index.html">Início</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
