@@ -2,12 +2,12 @@ let erros = 0;
 let acertos = 0;
 const notas = ['C4/w', 'D4/w', 'E4/w', 'F4/w', 'G4/w', 'A4/w', 'B4/w', 'C5/w', 'D5/w', 'E5/w', 'F5/w', 'G5/w', 'A5/w', 'B5/w'];
 let notaAtual = notaAleatoria();
-let notaAnterior = null;
 
 renderizaPartitura(notaAtual);
-(notaAtual > 6) ? notaAtual -= 7 : notaAtual;
+(notaAtual > 7) ? notaAtual -= 7 : notaAtual;
 
-function renderizaPartitura(nota) {
+function renderizaPartitura(nota) { 
+    
     const VF = Vex.Flow;
     const divPartitura = document.getElementById('div-part');
     divPartitura.innerHTML = ''; // Limpa o conteúdo anterior
@@ -23,24 +23,27 @@ function renderizaPartitura(nota) {
     vf.draw();
 }
 
-function btNotaClick(nota) {
+function btNotaClick(nota) {    
+    
     limpaDiv();
     (notaAtual > 6) ? notaAtual -= 7 : notaAtual;
 
-    if (notaAtual === nota) {
+    if (notaAtual == nota) {
         acertos++;
-    } else {
+    } else { 
         erros++;
     }
 
     document.getElementById('h2acertos').textContent = "Acertos: " + acertos;
     document.getElementById('h2erros').textContent = "Erros: " + erros;
-    notaAtual = notaAleatoria();
+    notaAtual = notaAleatoria(); 
     renderizaPartitura(notaAtual);
 }
 
 function notaAleatoria() {
-    return Math.floor(Math.random() * 14);
+    max = 14; 
+    retorno = Math.floor(Math.random() * max); 
+    return retorno;
 }
 
 function limpaDiv() {
